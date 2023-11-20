@@ -8,5 +8,7 @@ public class LoginTest {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
+
+        driver.quit();
     }
 }
