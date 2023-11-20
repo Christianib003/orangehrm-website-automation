@@ -17,7 +17,10 @@ public class LoginTest {
 
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
+        // create a WebDriverWait instance that waits for driver for a max of 10 seconds
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        // use the created instance to wait for the presence of a certain element
         WebElement usernameField = wait
                 .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name=\"username\"]")));
 
