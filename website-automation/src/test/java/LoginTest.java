@@ -23,6 +23,9 @@ public class LoginTest {
 
         usernameField.sendKeys("admin");
 
+        WebElement passowrdField = driver.findElement(By.xpath("//input[@name=\"password\"]"));
+        passowrdField.sendKeys("admin123");
+
         Thread.sleep(2000);
         driver.quit();
     }
