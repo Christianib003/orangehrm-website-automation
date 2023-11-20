@@ -29,7 +29,10 @@ public class LoginTest {
         WebElement passowrdField = driver.findElement(By.xpath("//input[@name=\"password\"]"));
         passowrdField.sendKeys("admin123");
 
-        Thread.sleep(2000);
+        WebElement loginBtn = driver.findElement(By.xpath("//button[@type=\"submit\"]"));
+        loginBtn.click();
+
+        Thread.sleep(5000);
         driver.quit();
     }
 }
