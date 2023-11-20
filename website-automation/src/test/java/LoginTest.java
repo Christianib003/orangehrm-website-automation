@@ -15,6 +15,7 @@ public class LoginTest {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
+        // open the login page of the website
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
         // create a WebDriverWait instance that waits for driver for a max of 10 seconds
@@ -23,7 +24,6 @@ public class LoginTest {
         // use the created instance to wait for the presence of a certain element
         WebElement usernameField = wait
                 .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name=\"username\"]")));
-
         usernameField.sendKeys("admin");
 
         WebElement passowrdField = driver.findElement(By.xpath("//input[@name=\"password\"]"));
@@ -32,7 +32,19 @@ public class LoginTest {
         WebElement loginBtn = driver.findElement(By.xpath("//button[@type=\"submit\"]"));
         loginBtn.click();
 
-        Thread.sleep(5000);
+        // check if the user is redirected to the dashboard page
+        WebElement dashboardNavBtn = wait
+                .until(ExpectedConditions.visibilityOfElementLocated(
+                        By.xpath("//*[@id=\"app\"]/div[1]/div[1]/aside/nav/div[2]/ul/li[8]/a")));
+        String dashboardNavClass = dashboardNavBtn.getAttribute("class");
+
+        boolean isActive = dashboardNavClass.contains("active");
+        if (!isActive)
+            System.out.println("Oops! The user was not redirected to the dashboard page.");
+        else
+            System.out.println("Yees! The user was redirected to the dashboard page.");
+
+        Thread.sleep(2000);
         driver.quit();
     }
 }
