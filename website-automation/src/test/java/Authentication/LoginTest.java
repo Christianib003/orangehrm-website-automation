@@ -1,4 +1,6 @@
 package Authentication;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -37,6 +39,7 @@ public class LoginTest {
                 .until(ExpectedConditions.visibilityOfElementLocated(
                         By.xpath("//*[@id=\"app\"]/div[1]/div[1]/aside/nav/div[2]/ul/li[8]/a")));
         String dashboardNavClass = dashboardNavBtn.getAttribute("class");
+        assertTrue(dashboardNavClass.contains("active"));
 
         boolean isActive = dashboardNavClass.contains("active");
         if (!isActive)
