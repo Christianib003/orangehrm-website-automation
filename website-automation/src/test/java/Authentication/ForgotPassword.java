@@ -1,5 +1,7 @@
 package Authentication;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -33,7 +35,8 @@ public class ForgotPassword {
 
         WebElement popupHeaderContainer = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/div/h6")));
         String popupHeaderString = popupHeaderContainer.getText();
-        System.out.println(popupHeaderString);
+        assertEquals(popupHeaderString, "Reset Password link sent successfully");
+
         Thread.sleep(3000);
         driver.quit();
     }
