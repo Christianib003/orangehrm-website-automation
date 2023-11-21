@@ -23,7 +23,8 @@ public class ForgotPassword {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         WebElement forgotPasswordLink = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[4]/p")));
-
+        forgotPasswordLink.click();
+        
         Thread.sleep(3000);
         driver.quit();
     }
