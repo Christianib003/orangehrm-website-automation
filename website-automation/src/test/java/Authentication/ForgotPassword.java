@@ -24,7 +24,11 @@ public class ForgotPassword {
         WebElement forgotPasswordLink = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[4]/p")));
         forgotPasswordLink.click();
-        
+
+        WebElement usernameField = wait
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name=\"username\"]")));
+        usernameField.sendKeys("admin");
+
         Thread.sleep(3000);
         driver.quit();
     }
