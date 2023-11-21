@@ -34,7 +34,8 @@ public class ForgotPassword {
         submitBtn.click();
 
         WebElement popupHeaderContainer = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/div/h6")));
-
+        String popupHeaderString = popupHeaderContainer.getText();
+        System.out.println(popupHeaderString);
         Thread.sleep(3000);
         driver.quit();
     }
