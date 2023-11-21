@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import dev.failsafe.internal.util.Assert;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ForgotPassword {
@@ -31,6 +32,8 @@ public class ForgotPassword {
 
         WebElement submitBtn = driver.findElement(By.xpath("//button[@type=\"submit\"]"));
         submitBtn.click();
+
+        WebElement popupHeaderContainer = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/div/h6")));
 
         Thread.sleep(3000);
         driver.quit();
