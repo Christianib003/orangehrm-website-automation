@@ -41,12 +41,6 @@ public class LoginTest {
         String dashboardNavClass = dashboardNavBtn.getAttribute("class");
         assertTrue(dashboardNavClass.contains("active"));
 
-        boolean isActive = dashboardNavClass.contains("active");
-        if (!isActive)
-            System.out.println("Oops! The user was not redirected to the dashboard page.");
-        else
-            System.out.println("Yees! The user was redirected to the dashboard page.");
-
         Thread.sleep(2000);
         driver.quit();
     }
