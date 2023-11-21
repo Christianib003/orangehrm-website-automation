@@ -29,6 +29,9 @@ public class ForgotPassword {
                 .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name=\"username\"]")));
         usernameField.sendKeys("admin");
 
+        WebElement submitBtn = driver.findElement(By.xpath("//button[@type=\"submit\"]"));
+        submitBtn.click();
+
         Thread.sleep(3000);
         driver.quit();
     }
