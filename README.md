@@ -1,5 +1,5 @@
 # orangehrm-website-automation
-This is a repository I used to sto
+This is a repository I used to st
 
 Press [here](https://opensource-demo.orangehrmlive.com/web/index.php/auth/login) to visit the website automated in this project
 
